@@ -1,0 +1,29 @@
+//**************************************************************                 
+//                                                                                
+//                          INTERFACE SOUNDS
+//
+//****************************************************************                
+
+<FOCUS_IN>
+{
+	permanent
+    low_quality
+    filename="sounds/interface/launch_glow1.wav"
+    disable3d    
+}
+
+<CLICK>
+{
+	permanent
+    disable3d
+    high_quality
+    filename="sounds/interface/focusin.wav"
+}
+
+//**************************************************************
+//
+//                          END OF FILE
+//
+//**************************************************************
+
+

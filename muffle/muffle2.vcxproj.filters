@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{00d95d04-e197-4f66-bba3-f80048be7219}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="include\Exception.cpp">
+      <Filter>include</Filter>
+    </ClCompile>
+    <ClCompile Include="include\stackguard.cpp">
+      <Filter>include</Filter>
+    </ClCompile>
+    <ClCompile Include="CallTrack.cpp" />
+    <ClCompile Include="caps.cpp" />
+    <ClCompile Include="CriticalSection.cpp" />
+    <ClCompile Include="DecodeMgr.cpp" />
+    <ClCompile Include="DecodeThread.cpp" />
+    <ClCompile Include="dsound.cpp" />
+    <ClCompile Include="DynamicDecodeStream.cpp" />
+    <ClCompile Include="DynamicDecodeStreamQuery.cpp" />
+    <ClCompile Include="DynamicSoundBuffer.cpp" />
+    <ClCompile Include="emitter.cpp" />
+    <ClCompile Include="Entry.cpp" />
+    <ClCompile Include="Fade.cpp" />
+    <ClCompile Include="filemgmt.cpp" />
+    <ClCompile Include="guid.cpp" />
+    <ClCompile Include="kernel.cpp" />
+    <ClCompile Include="muffle.cpp" />
+    <ClCompile Include="NotifyCluster.cpp" />
+    <ClCompile Include="NotifyThread.cpp" />
+    <ClCompile Include="ogg_decoder.cpp" />
+    <ClCompile Include="PlayingSound.cpp" />
+    <ClCompile Include="precomp.cpp" />
+    <ClCompile Include="primarybuffer.cpp" />
+    <ClCompile Include="RealFile.cpp" />
+    <ClCompile Include="safety.cpp" />
+    <ClCompile Include="script.cpp" />
+    <ClCompile Include="scriptmgr.cpp" />
+    <ClCompile Include="SoundBuffer.cpp" />
+    <ClCompile Include="SoundBufferLock.cpp" />
+    <ClCompile Include="SoundBufferNotify.cpp" />
+    <ClCompile Include="SoundScriptLexer.cpp" />
+    <ClCompile Include="SoundScriptParser.cpp" />
+    <ClCompile Include="SoundScriptRecorder.cpp" />
+    <ClCompile Include="StaticDecodeStream.cpp" />
+    <ClCompile Include="StaticSoundBuffer.cpp" />
+    <ClCompile Include="Stream.cpp" />
+    <ClCompile Include="ThemeManager.cpp" />
+    <ClCompile Include="ThemeSession.cpp" />
+    <ClCompile Include="volume.cpp" />
+    <ClCompile Include="volumemgr.cpp" />
+    <ClCompile Include="wave_decoder.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Exception.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ISound.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\quat.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\stackguard.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\VFS.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer.h" />
+    <ClInclude Include="cache.h" />
+    <ClInclude Include="CallTrack.h" />
+    <ClInclude Include="caps.h" />
+    <ClInclude Include="comptr.h" />
+    <ClInclude Include="CriticalSection.h" />
+    <ClInclude Include="DecodeMgr.h" />
+    <ClInclude Include="decoder.h" />
+    <ClInclude Include="DecodeStream.h" />
+    <ClInclude Include="DecodeThread.h" />
+    <ClInclude Include="dsound.h" />
+    <ClInclude Include="DynamicDecodeStream.h" />
+    <ClInclude Include="DynamicDecodeStreamQuery.h" />
+    <ClInclude Include="DynamicSoundBuffer.h" />
+    <ClInclude Include="emitter.h" />
+    <ClInclude Include="Entry.h" />
+    <ClInclude Include="exception.h" />
+    <ClInclude Include="Fade.h" />
+    <ClInclude Include="filemgmt.h" />
+    <ClInclude Include="format.h" />
+    <ClInclude Include="guid.h" />
+    <ClInclude Include="kernel.h" />
+    <ClInclude Include="Module.h" />
+    <ClInclude Include="muffle.h" />
+    <ClInclude Include="new.h" />
+    <ClInclude Include="NotifyCluster.h" />
+    <ClInclude Include="NotifyReceiver.h" />
+    <ClInclude Include="NotifyThread.h" />
+    <ClInclude Include="ogg_decoder.h" />
+    <ClInclude Include="PlayingSound.h" />
+    <ClInclude Include="precomp.h" />
+    <ClInclude Include="primarybuffer.h" />
+    <ClInclude Include="RealFile.h" />
+    <ClInclude Include="safety.h" />
+    <ClInclude Include="script.h" />
+    <ClInclude Include="scriptmgr.h" />
+    <ClInclude Include="SoundBuffer.h" />
+    <ClInclude Include="SoundBufferLock.h" />
+    <ClInclude Include="SoundBufferNotify.h" />
+    <ClInclude Include="SoundScriptLexer.hpp" />
+    <ClInclude Include="SoundScriptParser.hpp" />
+    <ClInclude Include="SoundScriptParserTokenTypes.hpp" />
+    <ClInclude Include="SoundScriptRecorder.h" />
+    <ClInclude Include="StaticDecodeStream.h" />
+    <ClInclude Include="StaticSoundBuffer.h" />
+    <ClInclude Include="stream.h" />
+    <ClInclude Include="ThemeManager.h" />
+    <ClInclude Include="ThemeSession.h" />
+    <ClInclude Include="volume.h" />
+    <ClInclude Include="volumemgr.h" />
+    <ClInclude Include="wave_decoder.h" />
+    <ClInclude Include="WndHandle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="grammar.g" />
+    <None Include="muffle.dsp" />
+  </ItemGroup>
+</Project>

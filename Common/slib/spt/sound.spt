@@ -1,0 +1,174 @@
+//**************************************************************                 
+//   Project    : Paradise Cracked
+//                                                                                
+//   file       : sound.spt
+//
+//   Description: scripting listener and sound sources settings
+//                
+//   Author     : Klimov Alexander a.k.a. DisPell
+//****************************************************************                
+
+//=========================== Set listener parametes here ===========================
+
+//
+//      NOTE: Environments is placed in order of appearence
+//
+//GENERIC=0
+//PADDEDCELL=1
+//ROOM=2
+//BATHROOM=3
+//LIVINGROOM=4
+//STONEROOM=5
+//AUDITORIUM=6
+//CONCERTHALL=7
+//CAVE=8
+//ARENA=9
+//HANGAR=10
+//CARPETEDHALLWAY=11
+//HALLWAY=12
+//STONECORRIDOR=13
+//ALLEY=14
+//FOREST=15
+//CITY=16
+//MOUNTAINS=17
+//QUARRY=18
+//PLAIN=19
+//PARKINGLOT=20
+//SEWERPIPE=21
+//UNDERWATER=22
+//DRUGGED=23
+//DIZZY=24
+//PSYCHOTIC=25
+//
+//      Listener parameters(camera)
+//
+//Room;                  // room effect level at low frequencies
+//RoomHF;                // room effect high-frequency level re. low frequency level
+//RoomRolloffFactor;     // like DS3D flRolloffFactor but for room effect
+//DecayTime;             // reverberation decay time at low frequencies
+//DecayHFRatio;          // high-frequency to low-frequency decay time ratio
+//Reflections;           // early reflections level relative to room effect
+//ReflectionsDelay;      // initial reflection delay time
+//Reverb;                // late reverberation level relative to room effect
+//ReverbDelay;           // late reverberation delay time relative to initial reflection
+//Environment;           // sets all listener properties
+//EnvironmentSize;       // environment size in meters
+//EnvironmentDiffusion;  // environment diffusion
+//AirAbsorptionHF;       // change in level per meter at 5 kHz
+//Flags;                 // modifies the behavior of properties
+//      
+// 3d enhanced tokens
+//SourceDirect           //
+//SourceDirectHF         //
+//SourceRoom             //
+//SourceRoomHF           //
+//SourceRolloff          //
+//SourceOutside          //
+//SourceAbsorption       //
+//SourceFlags            //
+//SourceObstruction      //
+//SourceObstructionLF    //
+//SourceOcclusion        //
+//SourceOcclusionLF      //
+//SourceOcclusionRoom    //
+//PosX                   //
+//PosY                   //
+//PosZ                   //
+//SourceAffectDirectHF   //
+//SourceAffectRoom       //
+//SourceAffectRoomHF     //
+//
+//
+//loop					 // specify looped source(will be placed in hardware memorys)
+//disable3d				 // specify source without 3d (by default all sources are 3d-typed)
+//filename				 // specify wave-file name
+//ctrlpan				 // specify panning
+//ctrlfreq				 // specify frequency
+//ctrlvolume             // specify volume(-10000..0)
+//maxdistance			 // specify maximum distance for 3d source
+//mindistance			 // specify minimum distance for 3d source
+//mode					 // specify mode
+//streamed 			     // streaming or not streaming (influence only for MP3 Aureal sources)
+//mpeg3					 // specify MPEG-3 source
+//insideconeangle        // specify inside cone angle
+//outsideconeangle       // specify outside cone angle
+//coneoutsidevolume      // specify cone outside angle
+//rolloff				 // specify rolloff             (for camera)(0..10)
+//dopplerfactor			 // specify Doppler Shift       (for camera)(0..10)
+//LeftHandCoordinateSystem  // specify Coordinate System(for camera)
+//RightHandCoordinateSystem //...
+//priority				 // specify priority for source)(0..1)
+//static                 // source will be played (not stored) in hardware memory
+//permanent              // tell sound device to keep source if it's played already
+//low_quality			 // specify low quality 3d-source
+//medium_quality		 // specify medium quality 3d-source
+//high_quality			 // specify high quality 3d-source
+
+CAMERA
+{
+    rolloff=1.0    
+    dopplerfactor=1.0
+    RightHandCoordinateSystem
+	Environment=7
+}
+
+//======================== Set sound sources parametes here ==========================
+
+
+<bullet>
+{
+	filename="sounds/weapons/bullet.wav"	
+	low_priority
+	maxdistance=50.0   	
+	mindistance=10.0
+}
+
+<fierytrace>
+{
+	loop	
+	filename="sounds/weapons/rockfly.wav"	
+	low_priority	
+	maxdistance=50.0   	
+	mindistance=10.0
+}
+
+<electrictrace>
+{
+	loop	
+	filename="sounds/weapons/electricline3.wav"
+	medium_priority	
+	maxdistance=50.0   	
+	mindistance=10.0
+}
+
+<finallevel>
+{
+	loop 
+	disable3d
+	high_priority
+    filename="sounds/wavs/finallevel.wav"
+}
+
+<explosion>
+{
+	high_quality
+	high_priority	
+	static
+    filename="sounds/explosions/expl_01.wav"
+	maxdistance=40.0
+	mindistance=5.0
+}
+
+<orbitalstation>
+{
+	loop
+	high_priority
+	disable3d
+    filename="sounds/wavs/orbitalstation.wav"
+}
+
+//**************************************************************                 
+//                                                                                
+//                          END OF FILE
+//
+//**************************************************************

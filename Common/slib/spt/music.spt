@@ -1,0 +1,59 @@
+//**************************************************************                 
+//                                                                                
+//                          MUSIC
+//
+//****************************************************************                
+
+<MIST_LOGO>
+{
+    loop    
+    mpeg3
+    streamed    
+	disable3d     
+    filename="sounds/mp3/mist.mp3"
+}
+
+<AFRICA>
+{
+	loop	
+	mpeg3     
+	disable3d 
+	streamed	  
+	filename="sounds/mp3/africa.mp3"	
+}
+
+<AUDITY>
+{
+	loop	
+	mpeg3   
+	disable3d 
+	streamed	
+	filename="sounds/mp3/audity.mp3"	
+}
+
+<HANDFUL>
+{
+	loop	
+	mpeg3 	
+	disable3d 	
+	streamed	
+	filename="sounds/mp3/Sava9402.mp3"	
+}
+
+<COBRAS>
+{
+	loop	
+	mpeg3 	
+	disable3d 
+	streamed	
+	filename="sounds/mp3/Sava9401.mp3"	
+}
+
+
+//**************************************************************                 
+//                                                                                
+//                          END OF FILE
+//
+//****************************************************************                
+
+

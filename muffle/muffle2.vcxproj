@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CallTrack.cpp" />
+    <ClCompile Include="caps.cpp" />
+    <ClCompile Include="CriticalSection.cpp" />
+    <ClCompile Include="DecodeMgr.cpp" />
+    <ClCompile Include="DecodeThread.cpp" />
+    <ClCompile Include="dsound.cpp" />
+    <ClCompile Include="DynamicDecodeStream.cpp" />
+    <ClCompile Include="DynamicDecodeStreamQuery.cpp" />
+    <ClCompile Include="DynamicSoundBuffer.cpp" />
+    <ClCompile Include="emitter.cpp" />
+    <ClCompile Include="Entry.cpp" />
+    <ClCompile Include="Fade.cpp" />
+    <ClCompile Include="filemgmt.cpp" />
+    <ClCompile Include="guid.cpp" />
+    <ClCompile Include="include\Exception.cpp" />
+    <ClCompile Include="include\stackguard.cpp" />
+    <ClCompile Include="kernel.cpp" />
+    <ClCompile Include="muffle.cpp" />
+    <ClCompile Include="NotifyCluster.cpp" />
+    <ClCompile Include="NotifyThread.cpp" />
+    <ClCompile Include="ogg_decoder.cpp" />
+    <ClCompile Include="PlayingSound.cpp" />
+    <ClCompile Include="precomp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="primarybuffer.cpp" />
+    <ClCompile Include="RealFile.cpp" />
+    <ClCompile Include="safety.cpp" />
+    <ClCompile Include="script.cpp" />
+    <ClCompile Include="scriptmgr.cpp" />
+    <ClCompile Include="SoundBuffer.cpp" />
+    <ClCompile Include="SoundBufferLock.cpp" />
+    <ClCompile Include="SoundBufferNotify.cpp" />
+    <ClCompile Include="SoundScriptLexer.cpp" />
+    <ClCompile Include="SoundScriptParser.cpp" />
+    <ClCompile Include="SoundScriptRecorder.cpp" />
+    <ClCompile Include="StaticDecodeStream.cpp" />
+    <ClCompile Include="StaticSoundBuffer.cpp" />
+    <ClCompile Include="Stream.cpp" />
+    <ClCompile Include="ThemeManager.cpp" />
+    <ClCompile Include="ThemeSession.cpp" />
+    <ClCompile Include="volume.cpp" />
+    <ClCompile Include="volumemgr.cpp" />
+    <ClCompile Include="wave_decoder.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Buffer.h" />
+    <ClInclude Include="cache.h" />
+    <ClInclude Include="CallTrack.h" />
+    <ClInclude Include="caps.h" />
+    <ClInclude Include="comptr.h" />
+    <ClInclude Include="CriticalSection.h" />
+    <ClInclude Include="DecodeMgr.h" />
+    <ClInclude Include="decoder.h" />
+    <ClInclude Include="DecodeStream.h" />
+    <ClInclude Include="DecodeThread.h" />
+    <ClInclude Include="dsound.h" />
+    <ClInclude Include="DynamicDecodeStream.h" />
+    <ClInclude Include="DynamicDecodeStreamQuery.h" />
+    <ClInclude Include="DynamicSoundBuffer.h" />
+    <ClInclude Include="emitter.h" />
+    <ClInclude Include="Entry.h" />
+    <ClInclude Include="exception.h" />
+    <ClInclude Include="Fade.h" />
+    <ClInclude Include="filemgmt.h" />
+    <ClInclude Include="format.h" />
+    <ClInclude Include="guid.h" />
+    <ClInclude Include="include\Exception.h" />
+    <ClInclude Include="include\ISound.h" />
+    <ClInclude Include="include\quat.h" />
+    <ClInclude Include="include\stackguard.h" />
+    <ClInclude Include="include\VFS.h" />
+    <ClInclude Include="kernel.h" />
+    <ClInclude Include="Module.h" />
+    <ClInclude Include="muffle.h" />
+    <ClInclude Include="new.h" />
+    <ClInclude Include="NotifyCluster.h" />
+    <ClInclude Include="NotifyReceiver.h" />
+    <ClInclude Include="NotifyThread.h" />
+    <ClInclude Include="ogg_decoder.h" />
+    <ClInclude Include="PlayingSound.h" />
+    <ClInclude Include="precomp.h" />
+    <ClInclude Include="primarybuffer.h" />
+    <ClInclude Include="RealFile.h" />
+    <ClInclude Include="safety.h" />
+    <ClInclude Include="script.h" />
+    <ClInclude Include="scriptmgr.h" />
+    <ClInclude Include="SoundBuffer.h" />
+    <ClInclude Include="SoundBufferLock.h" />
+    <ClInclude Include="SoundBufferNotify.h" />
+    <ClInclude Include="SoundScriptLexer.hpp" />
+    <ClInclude Include="SoundScriptParser.hpp" />
+    <ClInclude Include="SoundScriptParserTokenTypes.hpp" />
+    <ClInclude Include="SoundScriptRecorder.h" />
+    <ClInclude Include="StaticDecodeStream.h" />
+    <ClInclude Include="StaticSoundBuffer.h" />
+    <ClInclude Include="stream.h" />
+    <ClInclude Include="ThemeManager.h" />
+    <ClInclude Include="ThemeSession.h" />
+    <ClInclude Include="volume.h" />
+    <ClInclude Include="volumemgr.h" />
+    <ClInclude Include="wave_decoder.h" />
+    <ClInclude Include="WndHandle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="grammar.g">
+      <FileType>Document</FileType>
+    </None>
+    <None Include="muffle.dsp">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8E3E5F40-419D-4376-8CB8-6B60F4FC840B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>muffle2</RootNamespace>
+    <ProjectName>muffle</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v100</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v100</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)/_bin/$(Configuration)/</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>$(SolutionDir)/_build/$(Configuration)/$(ProjectName)/</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)/_bin/$(Configuration)/</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>$(SolutionDir)/_build/$(Configuration)/$(ProjectName)/</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>precomp.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>include;../mll/include;../3rdparty/directx/include;../3rdparty/antlr/include;../3rdparty/ogg/include</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>precomp.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>include;../mll/include;../3rdparty/directx/include;../3rdparty/antlr/include;../3rdparty/ogg/include</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

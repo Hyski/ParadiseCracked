@@ -1,0 +1,847 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AA93A3F4-C81B-43D1-AC73-8D75801FE0C4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>pc2013</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v100</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v100</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)/_bin/$(Configuration)/</OutDir>
+    <IntDir>$(SolutionDir)/_build/$(Configuration)/$(ProjectName)/</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)/_bin/$(Configuration)/</OutDir>
+    <IntDir>$(SolutionDir)/_build/$(Configuration)/$(ProjectName)/</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;D3D_OVERLOADS;NOMINMAX;_HOME_VERSION;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>precomp.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>3rdparty/dx7/include;Common/PCCTS</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Shlwapi.lib;dinput.lib;dxguid.lib;ddraw.lib;winmm.lib;dsound.lib;strmiids.lib;ogg_static_d.lib;vorbisfile_static_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>3rdparty/directx/lib;3rdparty/dx7/lib;3rdparty/ogg/lib</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;D3D_OVERLOADS;NOMINMAX;_HOME_VERSION;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>precomp.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>3rdparty/dx7/include;Common/PCCTS</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Shlwapi.lib;dinput.lib;dxguid.lib;ddraw.lib;winmm.lib;dsound.lib;strmiids.lib;ogg_static.lib;vorbisfile_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>3rdparty/directx/lib;3rdparty/dx7/lib;3rdparty/ogg/lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="buglist.txt" />
+    <Text Include="bugs.txt" />
+    <Text Include="Common\Net\HowToUseNetLib.txt" />
+    <Text Include="defines.txt" />
+    <Text Include="todo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="character.cpp" />
+    <ClCompile Include="Common\3dEffects\BombEffect.cpp" />
+    <ClCompile Include="Common\3dEffects\DestructEffect.cpp" />
+    <ClCompile Include="Common\3dEffects\DirectExplosion.cpp" />
+    <ClCompile Include="Common\3dEffects\DLightEffect.cpp" />
+    <ClCompile Include="Common\3dEffects\Effect.cpp" />
+    <ClCompile Include="Common\3dEffects\EffectInfo.cpp" />
+    <ClCompile Include="Common\3dEffects\EffectManager.cpp" />
+    <ClCompile Include="Common\3dEffects\ExplosionEffect.cpp" />
+    <ClCompile Include="Common\3dEffects\FireEffect.cpp" />
+    <ClCompile Include="Common\3dEffects\GrenadeTracer.cpp" />
+    <ClCompile Include="Common\3dEffects\HaloEffect.cpp" />
+    <ClCompile Include="Common\3dEffects\LensFlareEffect.cpp" />
+    <ClCompile Include="Common\3dEffects\LineEffect.cpp" />
+    <ClCompile Include="Common\3dEffects\MeatEffect.cpp" />
+    <ClCompile Include="Common\3dEffects\ModelDestructEffect.cpp" />
+    <ClCompile Include="Common\3dEffects\ModelManager.cpp" />
+    <ClCompile Include="Common\3dEffects\particle.cpp" />
+    <ClCompile Include="Common\3dEffects\SelectionEffect.cpp" />
+    <ClCompile Include="Common\3dEffects\ShieldEffect.cpp" />
+    <ClCompile Include="Common\3dEffects\ShootSmokeEffect.cpp" />
+    <ClCompile Include="Common\3dEffects\SmokeEffect.cpp" />
+    <ClCompile Include="Common\3dEffects\SpangleEffect.cpp" />
+    <ClCompile Include="Common\3dEffects\SparkleEffect.cpp" />
+    <ClCompile Include="Common\3dEffects\SpotEffect.cpp" />
+    <ClCompile Include="Common\3dEffects\TailEffect.cpp" />
+    <ClCompile Include="Common\3d\quat.cpp" />
+    <ClCompile Include="Common\BinkMgr\BinkMgr.cpp" />
+    <ClCompile Include="Common\BinkMgr\BinkSurface.cpp" />
+    <ClCompile Include="Common\BinkPlayer\BinkPlayer.cpp" />
+    <ClCompile Include="Common\CmdLine\CmdLine.cpp" />
+    <ClCompile Include="Common\D3DApp\D3DInfo\D3DInfo.cpp" />
+    <ClCompile Include="Common\D3DApp\D3DKernel\D3DKernel.cpp" />
+    <ClCompile Include="Common\D3DApp\GammaControl\GammaControl.cpp" />
+    <ClCompile Include="Common\D3DApp\Input\CharKeySupport.cpp" />
+    <ClCompile Include="Common\D3DApp\Input\DirectInput.cpp" />
+    <ClCompile Include="Common\D3DApp\Input\DirectInputDevice.cpp" />
+    <ClCompile Include="Common\D3DApp\Input\Input.cpp" />
+    <ClCompile Include="Common\D3DApp\Input\Keyboard.cpp" />
+    <ClCompile Include="Common\D3DApp\Input\Mouse.cpp" />
+    <ClCompile Include="Common\D3DApp\Input\NhtThread.cpp" />
+    <ClCompile Include="Common\DataMgr\DataMgr.cpp" />
+    <ClCompile Include="Common\DataMgr\TblFile.cpp" />
+    <ClCompile Include="Common\DataMgr\TxtFile.cpp" />
+    <ClCompile Include="Common\DataMgr\ZipInfo\ZipInfo.cpp" />
+    <ClCompile Include="Common\DebugInfo\DebugInfo.cpp" />
+    <ClCompile Include="Common\Exception\Exception.cpp" />
+    <ClCompile Include="Common\FontMgr\FastFont.cpp" />
+    <ClCompile Include="Common\FontMgr\Font.cpp" />
+    <ClCompile Include="Common\FontMgr\Font2D.cpp" />
+    <ClCompile Include="Common\FontMgr\FontMgr.cpp" />
+    <ClCompile Include="Common\FontMgr\FormattedText.cpp" />
+    <ClCompile Include="Common\FontMgr\GFont.cpp" />
+    <ClCompile Include="Common\FontMgr\LogicalText.cpp" />
+    <ClCompile Include="Common\FontMgr\VirtualTexture.cpp" />
+    <ClCompile Include="Common\GLayer\GLayer.cpp" />
+    <ClCompile Include="Common\GraphPipe\camera.cpp" />
+    <ClCompile Include="Common\GraphPipe\culling.cpp" />
+    <ClCompile Include="Common\GraphPipe\graphpipe.cpp" />
+    <ClCompile Include="Common\GraphPipe\SimpleTexturedObject.cpp" />
+    <ClCompile Include="Common\GraphPipe\VertexBuffer.cpp" />
+    <ClCompile Include="Common\GraphPipe\VShader.cpp" />
+    <ClCompile Include="Common\gsound\FileSystem.cpp" />
+    <ClCompile Include="Common\gsound\soundInit.cpp" />
+    <ClCompile Include="Common\Image\Bitmap.cpp" />
+    <ClCompile Include="Common\Image\Image.cpp" />
+    <ClCompile Include="Common\Image\ImageFactory.cpp" />
+    <ClCompile Include="Common\Image\Jpeg.cpp" />
+    <ClCompile Include="Common\Image\Targa.cpp" />
+    <ClCompile Include="Common\Log\LConsole.cpp" />
+    <ClCompile Include="Common\Log\Log.cpp" />
+    <ClCompile Include="Common\PCCTS\AParser.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Common\PCCTS\ASTBase.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Common\PCCTS\ATokenBuffer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Common\PCCTS\BufFileInput.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Common\PCCTS\DLexer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Common\PCCTS\DLexerBase.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Common\PCCTS\PCCTSAST.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Common\PCCTS\slist.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Common\PiracyControl\PiracyControl.cpp" />
+    <ClCompile Include="Common\precomp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Common\SaveLoad\SaveLoad.cpp" />
+    <ClCompile Include="Common\Shader\ShdCompiler.cpp" />
+    <ClCompile Include="Common\Shader\ShdGenerator.cpp" />
+    <ClCompile Include="Common\Shader\ShdLexer.cpp" />
+    <ClCompile Include="Common\Shader\ShdParser.cpp" />
+    <ClCompile Include="Common\Shader\ShdRecorder.cpp" />
+    <ClCompile Include="Common\Shader\shd_grammar.cpp" />
+    <ClCompile Include="Common\Shell\CpuInfo.cpp" />
+    <ClCompile Include="Common\Shell\Shell.cpp" />
+    <ClCompile Include="Common\Shell\SystemInfo.cpp" />
+    <ClCompile Include="Common\SurfaceMgr\DDSurface.cpp" />
+    <ClCompile Include="Common\SurfaceMgr\SurfaceMgr.cpp" />
+    <ClCompile Include="Common\TextureMgr\D3DTexture.cpp" />
+    <ClCompile Include="Common\TextureMgr\DIBData.cpp" />
+    <ClCompile Include="Common\TextureMgr\NhtBitmap.cpp" />
+    <ClCompile Include="Common\TextureMgr\NhtTarga.cpp" />
+    <ClCompile Include="Common\TextureMgr\TextureFormatMgr.cpp" />
+    <ClCompile Include="Common\TextureMgr\TextureMgr.cpp" />
+    <ClCompile Include="Common\Timer\Timer.cpp" />
+    <ClCompile Include="Common\UI\Button.cpp" />
+    <ClCompile Include="Common\UI\Slide.cpp" />
+    <ClCompile Include="Common\UI\Static.cpp" />
+    <ClCompile Include="Common\UI\Widget.cpp" />
+    <ClCompile Include="Common\Utils\d3dutil.cpp" />
+    <ClCompile Include="Common\Utils\Dir.cpp" />
+    <ClCompile Include="Common\Utils\OptSlot.cpp" />
+    <ClCompile Include="Common\Utils\profiler.cpp" />
+    <ClCompile Include="Common\Utils\stackguard.cpp" />
+    <ClCompile Include="Common\Utils\utils.cpp" />
+    <ClCompile Include="Common\Utils\VFile.cpp" />
+    <ClCompile Include="DDFrame\DDFrame.cpp" />
+    <ClCompile Include="DDFrame\DDMainWnd.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameLevel\bsp.cpp" />
+    <ClCompile Include="GameLevel\BTree.cpp" />
+    <ClCompile Include="GameLevel\chop.cpp" />
+    <ClCompile Include="GameLevel\DObject.cpp" />
+    <ClCompile Include="GameLevel\ExplosionManager.cpp" />
+    <ClCompile Include="GameLevel\GameLevel.cpp" />
+    <ClCompile Include="GameLevel\Grid.cpp" />
+    <ClCompile Include="GameLevel\LevelObjects.cpp" />
+    <ClCompile Include="GameLevel\LevelToLogic.cpp" />
+    <ClCompile Include="GameLevel\LongShot.cpp" />
+    <ClCompile Include="GameLevel\Mark.cpp" />
+    <ClCompile Include="GameLevel\objectsNG.cpp" />
+    <ClCompile Include="GameLevel\ScatteredItems.cpp" />
+    <ClCompile Include="globals.cpp" />
+    <ClCompile Include="Interface\Banner.cpp" />
+    <ClCompile Include="Interface\BannerMgr.cpp" />
+    <ClCompile Include="Interface\Console.cpp" />
+    <ClCompile Include="Interface\DescriptionScreen.cpp" />
+    <ClCompile Include="Interface\Dialog.cpp" />
+    <ClCompile Include="Interface\DialogScreen.cpp" />
+    <ClCompile Include="Interface\DXImageMgr.cpp" />
+    <ClCompile Include="Interface\Edit.cpp" />
+    <ClCompile Include="Interface\ELs\elText.cpp" />
+    <ClCompile Include="Interface\GameScreen.cpp" />
+    <ClCompile Include="Interface\GraphMgr.cpp" />
+    <ClCompile Include="Interface\Interface.cpp" />
+    <ClCompile Include="Interface\InventoryScreen.cpp" />
+    <ClCompile Include="Interface\JournalScreen.cpp" />
+    <ClCompile Include="Interface\Lagoon.cpp" />
+    <ClCompile Include="Interface\LoadingScreen.cpp" />
+    <ClCompile Include="Interface\MainMenu.cpp" />
+    <ClCompile Include="Interface\MenuMgr.cpp" />
+    <ClCompile Include="Interface\MouseCursor.cpp" />
+    <ClCompile Include="Interface\MultiEdit.cpp" />
+    <ClCompile Include="Interface\OptionsScreen.cpp" />
+    <ClCompile Include="Interface\Screens.cpp" />
+    <ClCompile Include="Interface\ScreenShot.cpp" />
+    <ClCompile Include="Interface\SlotsEngine.cpp" />
+    <ClCompile Include="Interface\Text.cpp" />
+    <ClCompile Include="Interface\TextBox.cpp" />
+    <ClCompile Include="Interface\Tip.cpp" />
+    <ClCompile Include="Interface\TradeScreen.cpp" />
+    <ClCompile Include="Interface\VIL\VButton.cpp" />
+    <ClCompile Include="Interface\VIL\VLagoon.cpp" />
+    <ClCompile Include="Interface\VIL\VLagoonContainer.cpp" />
+    <ClCompile Include="Interface\WidgetFactory.cpp" />
+    <ClCompile Include="Interface\WidgetSoundMgr.cpp" />
+    <ClCompile Include="IWorld.cpp" />
+    <ClCompile Include="logic2\Activity.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\AIAPI.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\AIBase.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\AIUtils.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\CheatParser.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\CivilianAI.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\DirtyLinks.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\DragDropManager.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\EnemyAI.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\EnemyDetection.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\entity.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\form.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\GameForm.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\GameLogic.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\GraphHexGrid.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\Graphic.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\HexGrid.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\hexutils.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\InventoryFormImp3.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\JournalFormImp3.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\PanicBehaviour.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\PathUtils.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\Player.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\questengine.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\QuestServer.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\questsparser.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\ShopFormImp.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\SndUtils.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\Spawn.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\Strategy.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\Thing.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\TraceUtils.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="logic2\VisUtils3.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">logicdefs.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-logic2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="MemoryDump.cpp" />
+    <ClCompile Include="ModMgr.cpp" />
+    <ClCompile Include="Options\Options.cpp" />
+    <ClCompile Include="Options\PCOptions.cpp" />
+    <ClCompile Include="Options\XRegistry.cpp" />
+    <ClCompile Include="SaveVersion.cpp" />
+    <ClCompile Include="ScriptScene\scriptpch.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">scriptpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">scriptpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-scriptscene.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-scriptscene.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="ScriptScene\ScriptSceneAPI.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">scriptpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">scriptpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-scriptscene.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-scriptscene.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="ScriptScene\ScriptSceneManager.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">scriptpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">scriptpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-scriptscene.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-scriptscene.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="ScriptScene\SSEpisode1.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">scriptpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">scriptpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-scriptscene.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-scriptscene.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="ScriptScene\SSEpisode2.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">scriptpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">scriptpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-scriptscene.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-scriptscene.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="ScriptScene\SSEpisode3.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">scriptpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">scriptpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-scriptscene.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-scriptscene.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="ScriptScene\SSEpisode4.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">scriptpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">scriptpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-scriptscene.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-scriptscene.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="Skin\AnimaLibrary.cpp" />
+    <ClCompile Include="Skin\BaseShadow.cpp" />
+    <ClCompile Include="Skin\Bone.cpp" />
+    <ClCompile Include="Skin\ComplexShadow.cpp" />
+    <ClCompile Include="Skin\KeyAnimation.cpp" />
+    <ClCompile Include="Skin\Person.cpp" />
+    <ClCompile Include="Skin\ShadowBuffer.cpp" />
+    <ClCompile Include="Skin\ShadowUtility.cpp" />
+    <ClCompile Include="Skin\SimpleShadow.cpp" />
+    <ClCompile Include="Skin\skanim.cpp" />
+    <ClCompile Include="Skin\skeleton.cpp" />
+    <ClCompile Include="Skin\Skin.cpp" />
+    <ClCompile Include="version.cpp" />
+    <ClCompile Include="WinMain.cpp" />
+    <ClCompile Include="World.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="character.h" />
+    <ClInclude Include="Common\3dEffects\BombEffect.h" />
+    <ClInclude Include="Common\3dEffects\DestructEffect.h" />
+    <ClInclude Include="Common\3dEffects\DirectExplosion.h" />
+    <ClInclude Include="Common\3dEffects\DLightEffect.h" />
+    <ClInclude Include="Common\3dEffects\Effect.h" />
+    <ClInclude Include="Common\3dEffects\EffectInfo.h" />
+    <ClInclude Include="Common\3dEffects\EffectManager.h" />
+    <ClInclude Include="Common\3dEffects\ExplosionEffect.h" />
+    <ClInclude Include="Common\3dEffects\FireEffect.h" />
+    <ClInclude Include="Common\3dEffects\GrenadeTracer.h" />
+    <ClInclude Include="Common\3dEffects\HaloEffect.h" />
+    <ClInclude Include="Common\3dEffects\LensFlareEffect.h" />
+    <ClInclude Include="Common\3dEffects\LineEffect.h" />
+    <ClInclude Include="Common\3dEffects\MeatEffect.h" />
+    <ClInclude Include="Common\3dEffects\ModelDestructEffect.h" />
+    <ClInclude Include="Common\3dEffects\ModelManager.h" />
+    <ClInclude Include="Common\3dEffects\Particle.h" />
+    <ClInclude Include="Common\3dEffects\SelectionEffect.h" />
+    <ClInclude Include="Common\3dEffects\ShieldEffect.h" />
+    <ClInclude Include="Common\3dEffects\ShootSmokeEffect.h" />
+    <ClInclude Include="Common\3dEffects\SmokeEffect.h" />
+    <ClInclude Include="Common\3dEffects\SpangleEffect.h" />
+    <ClInclude Include="Common\3dEffects\SparkleEffect.h" />
+    <ClInclude Include="Common\3dEffects\SpotEffect.h" />
+    <ClInclude Include="Common\3dEffects\TailEffect.h" />
+    <ClInclude Include="Common\3d\geometry.h" />
+    <ClInclude Include="Common\3d\quat.h" />
+    <ClInclude Include="Common\BinkMgr\BinkMgr.h" />
+    <ClInclude Include="Common\BinkMgr\BinkSurface.h" />
+    <ClInclude Include="Common\BinkPlayer\BinkPlayer.h" />
+    <ClInclude Include="Common\Bink\BINK.H" />
+    <ClInclude Include="Common\Bink\RAD.H" />
+    <ClInclude Include="Common\CmdLine\CmdLine.h" />
+    <ClInclude Include="Common\D3DApp\D3DInfo\D3DInfo.h" />
+    <ClInclude Include="Common\D3DApp\D3DKernel\D3DKernel.h" />
+    <ClInclude Include="Common\D3DApp\GammaControl\GammaControl.h" />
+    <ClInclude Include="Common\D3DApp\Input\CharKeySupport.h" />
+    <ClInclude Include="Common\D3DApp\Input\DirectInput.h" />
+    <ClInclude Include="Common\D3DApp\Input\DirectInputDevice.h" />
+    <ClInclude Include="Common\D3DApp\Input\Input.h" />
+    <ClInclude Include="Common\D3DApp\Input\Keyboard.h" />
+    <ClInclude Include="Common\D3DApp\Input\Mouse.h" />
+    <ClInclude Include="Common\D3DApp\Input\NhtThread.h" />
+    <ClInclude Include="Common\DataMgr\DataMgr.h" />
+    <ClInclude Include="Common\DataMgr\TblFile.h" />
+    <ClInclude Include="Common\DataMgr\TxtFile.h" />
+    <ClInclude Include="Common\DataMgr\ZipInfo\decs.h" />
+    <ClInclude Include="Common\DataMgr\ZipInfo\structs.h" />
+    <ClInclude Include="Common\DataMgr\ZipInfo\unzip.h" />
+    <ClInclude Include="Common\DataMgr\ZipInfo\ZipInfo.h" />
+    <ClInclude Include="Common\DebugInfo\DebugInfo.h" />
+    <ClInclude Include="Common\Exception\Exception.h" />
+    <ClInclude Include="Common\FontMgr\FastFont.h" />
+    <ClInclude Include="Common\FontMgr\Font.h" />
+    <ClInclude Include="Common\FontMgr\Font2D.h" />
+    <ClInclude Include="Common\FontMgr\FontMgr.h" />
+    <ClInclude Include="Common\FontMgr\FormattedText.h" />
+    <ClInclude Include="Common\FontMgr\GFont.h" />
+    <ClInclude Include="Common\FontMgr\LogicalText.h" />
+    <ClInclude Include="Common\FontMgr\mlf.h" />
+    <ClInclude Include="Common\FontMgr\mlff.h" />
+    <ClInclude Include="Common\FontMgr\VirtualTexture.h" />
+    <ClInclude Include="Common\GLayer\GLayer.h" />
+    <ClInclude Include="Common\GraphPipe\camera.h" />
+    <ClInclude Include="Common\GraphPipe\culling.h" />
+    <ClInclude Include="Common\GraphPipe\DynamicVB.h" />
+    <ClInclude Include="Common\GraphPipe\graphpipe.h" />
+    <ClInclude Include="Common\GraphPipe\PrimitiveContaner.h" />
+    <ClInclude Include="Common\GraphPipe\SimpleTexturedObject.h" />
+    <ClInclude Include="Common\GraphPipe\VertexBuffer.h" />
+    <ClInclude Include="Common\GraphPipe\VShader.h" />
+    <ClInclude Include="Common\gsound\FileSystem.h" />
+    <ClInclude Include="Common\Image\Bitmap.h" />
+    <ClInclude Include="Common\Image\ijl.h" />
+    <ClInclude Include="Common\Image\Image.h" />
+    <ClInclude Include="Common\Image\ImageFactory.h" />
+    <ClInclude Include="Common\Image\Jpeg.h" />
+    <ClInclude Include="Common\Image\Targa.h" />
+    <ClInclude Include="Common\Log\LConsole.h" />
+    <ClInclude Include="Common\Log\Log.h" />
+    <ClInclude Include="Common\PCCTS\AParser.h" />
+    <ClInclude Include="Common\PCCTS\ASTBase.h" />
+    <ClInclude Include="Common\PCCTS\AToken.h" />
+    <ClInclude Include="Common\PCCTS\ATokenBuffer.h" />
+    <ClInclude Include="Common\PCCTS\ATokenStream.h" />
+    <ClInclude Include="Common\PCCTS\ATokPtr.h" />
+    <ClInclude Include="Common\PCCTS\BufFileInput.h" />
+    <ClInclude Include="Common\PCCTS\DLexerBase.h" />
+    <ClInclude Include="Common\PCCTS\DLG_stream_input.h" />
+    <ClInclude Include="Common\PCCTS\PakStream.h" />
+    <ClInclude Include="Common\PCCTS\PCCTSAST.h" />
+    <ClInclude Include="Common\PCCTS\pcctscfg.h" />
+    <ClInclude Include="Common\PCCTS\pccts_stdio.h" />
+    <ClInclude Include="Common\PCCTS\SList.h" />
+    <ClInclude Include="Common\PiracyControl\PiracyControl.h" />
+    <ClInclude Include="Common\precomp.h" />
+    <ClInclude Include="Common\SaveLoad\SaveLoad.h" />
+    <ClInclude Include="Common\Shader\OutWrapper.h" />
+    <ClInclude Include="Common\Shader\shader.h" />
+    <ClInclude Include="Common\Shader\ShdCompiler.h" />
+    <ClInclude Include="Common\Shader\ShdGenerator.h" />
+    <ClInclude Include="Common\Shader\ShdLexer.h" />
+    <ClInclude Include="Common\Shader\ShdParser.h" />
+    <ClInclude Include="Common\Shader\ShdRecorder.h" />
+    <ClInclude Include="Common\Shader\tokens.h" />
+    <ClInclude Include="Common\Shell\CpuInfo.h" />
+    <ClInclude Include="Common\Shell\Shell.h" />
+    <ClInclude Include="Common\Shell\SystemInfo.h" />
+    <ClInclude Include="Common\SurfaceMgr\DDSurface.h" />
+    <ClInclude Include="Common\SurfaceMgr\SurfaceMgr.h" />
+    <ClInclude Include="Common\TextureMgr\D3DTexture.h" />
+    <ClInclude Include="Common\TextureMgr\DIBData.h" />
+    <ClInclude Include="Common\TextureMgr\NhtBitmap.h" />
+    <ClInclude Include="Common\TextureMgr\NhtTarga.h" />
+    <ClInclude Include="Common\TextureMgr\TextureFormatMgr.h" />
+    <ClInclude Include="Common\TextureMgr\TextureMgr.h" />
+    <ClInclude Include="Common\Timer\Timer.h" />
+    <ClInclude Include="Common\Tree.h" />
+    <ClInclude Include="Common\UI\Button.h" />
+    <ClInclude Include="Common\UI\Slide.h" />
+    <ClInclude Include="Common\UI\Static.h" />
+    <ClInclude Include="Common\UI\VData.h" />
+    <ClInclude Include="Common\UI\Widget.h" />
+    <ClInclude Include="Common\Utils\d3dutil.h" />
+    <ClInclude Include="Common\Utils\Dir.h" />
+    <ClInclude Include="Common\Utils\OptSlot.h" />
+    <ClInclude Include="Common\Utils\profiler.h" />
+    <ClInclude Include="Common\Utils\stackguard.h" />
+    <ClInclude Include="Common\Utils\utils.h" />
+    <ClInclude Include="Common\Utils\VFile.h" />
+    <ClInclude Include="DDFrame\DDFrame.h" />
+    <ClInclude Include="DDFrame\DDMainWnd.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameLevel\bsp.h" />
+    <ClInclude Include="GameLevel\BTree.h" />
+    <ClInclude Include="GameLevel\chop.h" />
+    <ClInclude Include="GameLevel\DObject.h" />
+    <ClInclude Include="GameLevel\ExplosionManager.h" />
+    <ClInclude Include="GameLevel\GameLevel.h" />
+    <ClInclude Include="GameLevel\Grid.h" />
+    <ClInclude Include="GameLevel\LevelObjects.h" />
+    <ClInclude Include="GameLevel\LevelToLogic.h" />
+    <ClInclude Include="GameLevel\LongShot.h" />
+    <ClInclude Include="GameLevel\Mark.h" />
+    <ClInclude Include="GameLevel\objectsNG.h" />
+    <ClInclude Include="GameLevel\ScatteredItems.h" />
+    <ClInclude Include="globals.h" />
+    <ClInclude Include="Interface\Banner.h" />
+    <ClInclude Include="Interface\BannerMgr.h" />
+    <ClInclude Include="Interface\Console.h" />
+    <ClInclude Include="Interface\DescriptionScreen.h" />
+    <ClInclude Include="Interface\Dialog.h" />
+    <ClInclude Include="Interface\DialogScreen.h" />
+    <ClInclude Include="Interface\DXImageMgr.h" />
+    <ClInclude Include="Interface\Edit.h" />
+    <ClInclude Include="Interface\ELs\elText.h" />
+    <ClInclude Include="Interface\GameScreen.h" />
+    <ClInclude Include="Interface\GraphMgr.h" />
+    <ClInclude Include="Interface\Interface.h" />
+    <ClInclude Include="Interface\InventoryScreen.h" />
+    <ClInclude Include="Interface\JournalScreen.h" />
+    <ClInclude Include="Interface\Lagoon.h" />
+    <ClInclude Include="Interface\LoadingScreen.h" />
+    <ClInclude Include="Interface\MainMenu.h" />
+    <ClInclude Include="Interface\MenuMgr.h" />
+    <ClInclude Include="Interface\MouseCursor.h" />
+    <ClInclude Include="Interface\MultiEdit.h" />
+    <ClInclude Include="Interface\OptionsScreen.h" />
+    <ClInclude Include="Interface\Screens.h" />
+    <ClInclude Include="Interface\ScreenShot.h" />
+    <ClInclude Include="Interface\SlotsEngine.h" />
+    <ClInclude Include="Interface\Text.h" />
+    <ClInclude Include="Interface\TextBox.h" />
+    <ClInclude Include="Interface\Tip.h" />
+    <ClInclude Include="Interface\TradeScreen.h" />
+    <ClInclude Include="Interface\VIL\VButton.h" />
+    <ClInclude Include="Interface\VIL\VLagoon.h" />
+    <ClInclude Include="Interface\VIL\VLagoonContainer.h" />
+    <ClInclude Include="Interface\VIL\VMouseState.h" />
+    <ClInclude Include="Interface\VIL\VPoint.h" />
+    <ClInclude Include="Interface\VIL\VRegion.h" />
+    <ClInclude Include="Interface\WidgetFactory.h" />
+    <ClInclude Include="Interface\WidgetSoundMgr.h" />
+    <ClInclude Include="IWorld.h" />
+    <ClInclude Include="logic2\Activity.h" />
+    <ClInclude Include="logic2\AIAPI.h" />
+    <ClInclude Include="logic2\AIBase.h" />
+    <ClInclude Include="logic2\AIContext.h" />
+    <ClInclude Include="logic2\AIUtils.h" />
+    <ClInclude Include="logic2\Bureau.h" />
+    <ClInclude Include="logic2\Cameraman.h" />
+    <ClInclude Include="logic2\CheatParser.h" />
+    <ClInclude Include="logic2\CivilianAI.h" />
+    <ClInclude Include="logic2\Damager.h" />
+    <ClInclude Include="logic2\DirtyLinks.h" />
+    <ClInclude Include="logic2\DragDropManager.h" />
+    <ClInclude Include="logic2\DynUtils.h" />
+    <ClInclude Include="logic2\EnemyAI.h" />
+    <ClInclude Include="logic2\EnemyDetection.h" />
+    <ClInclude Include="logic2\entity.h" />
+    <ClInclude Include="logic2\entityaux.h" />
+    <ClInclude Include="logic2\EntityFactory.h" />
+    <ClInclude Include="logic2\Form.h" />
+    <ClInclude Include="logic2\GameFormImp.h" />
+    <ClInclude Include="logic2\GameLogic.h" />
+    <ClInclude Include="logic2\GameObserver.h" />
+    <ClInclude Include="logic2\GraphHexGrid.h" />
+    <ClInclude Include="logic2\Graphic.h" />
+    <ClInclude Include="logic2\HexGrid.h" />
+    <ClInclude Include="logic2\hexutils.h" />
+    <ClInclude Include="logic2\InfoUtils.h" />
+    <ClInclude Include="logic2\InventoryFormImp3.h" />
+    <ClInclude Include="logic2\JournalFormImp.h" />
+    <ClInclude Include="logic2\JournalFormImp3.h" />
+    <ClInclude Include="logic2\logicdefs.h" />
+    <ClInclude Include="logic2\Observer.h" />
+    <ClInclude Include="logic2\PanicBehaviour.h" />
+    <ClInclude Include="logic2\PathUtils.h" />
+    <ClInclude Include="logic2\PhraseManager.h" />
+    <ClInclude Include="logic2\Player.h" />
+    <ClInclude Include="logic2\profiler.h" />
+    <ClInclude Include="logic2\questengine.h" />
+    <ClInclude Include="logic2\questengine_loc.h" />
+    <ClInclude Include="logic2\QuestServer.h" />
+    <ClInclude Include="logic2\ShopFormImp.h" />
+    <ClInclude Include="logic2\SndUtils.h" />
+    <ClInclude Include="logic2\Spawn.h" />
+    <ClInclude Include="logic2\SScene.h" />
+    <ClInclude Include="logic2\Strategy.h" />
+    <ClInclude Include="logic2\Thing.h" />
+    <ClInclude Include="logic2\ThingFactory.h" />
+    <ClInclude Include="logic2\TraceUtils.h" />
+    <ClInclude Include="logic2\VisUtils3.h" />
+    <ClInclude Include="logic2\XlsReader.h" />
+    <ClInclude Include="ModMgr.h" />
+    <ClInclude Include="Options\Options.h" />
+    <ClInclude Include="Options\PCOptions.h" />
+    <ClInclude Include="Options\XRegistry.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ScriptScene\scriptpch.h" />
+    <ClInclude Include="ScriptScene\ScriptSceneAPI.h" />
+    <ClInclude Include="ScriptScene\ScriptSceneManager.h" />
+    <ClInclude Include="ScriptScene\SSEpisode1.h" />
+    <ClInclude Include="ScriptScene\SSEpisode2.h" />
+    <ClInclude Include="ScriptScene\SSEpisode3.h" />
+    <ClInclude Include="ScriptScene\SSEpisode4.h" />
+    <ClInclude Include="Skin\AnimaLibrary.h" />
+    <ClInclude Include="Skin\Bone.h" />
+    <ClInclude Include="Skin\KeyAnimation.h" />
+    <ClInclude Include="Skin\Person.h" />
+    <ClInclude Include="Skin\Shadow.h" />
+    <ClInclude Include="Skin\skanim.h" />
+    <ClInclude Include="Skin\skeleton.h" />
+    <ClInclude Include="Skin\Skin.h" />
+    <ClInclude Include="Skin\slicer.h" />
+    <ClInclude Include="World.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
+    <Image Include="uninst.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Common\PCCTS\pccts.dsp" />
+    <None Include="ijl10.dll" />
+    <None Include="logic2\logic2.dsp" />
+    <None Include="ScriptScene\ScriptScene.dsp" />
+    <None Include="ScriptScene\ScriptScene.vcproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Common\Bink\binkw32.lib" />
+    <Library Include="Common\DataMgr\ZipInfo\unzip.lib" />
+    <Library Include="Common\Image\ijl.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="3rdparty\antlr\antlr.vcxproj">
+      <Project>{16ddda17-9373-492f-a98b-77d1eb74dab5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="muffle\muffle2.vcxproj">
+      <Project>{8e3e5f40-419d-4376-8cb8-6b60f4fc840b}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

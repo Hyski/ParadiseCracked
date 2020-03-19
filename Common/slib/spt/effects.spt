@@ -1,0 +1,24 @@
+//======================== Set sound sources parametes here ==========================
+
+<onetime>
+{   
+    filename="sounds/readyeffects/denied.wav"    
+    maxdistance=100.0    
+    mindistance=50
+}
+
+
+<looping>
+{   
+    filename="sounds/readyeffects/flash/small_flame.wav"    
+    maxdistance=100.0    
+    mindistance=50
+    loop
+}
+
+//**************************************************************                 
+//                                                                                
+//                          END OF FILE
+//
+//****************************************************************                
+
